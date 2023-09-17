@@ -16,11 +16,11 @@ userRouter.route('/')
     .post(login)
 
 userRouter.route("/me")
-    .get(verifyJWT,getLoggerUsers)
+    .get(getLoggerUsers)
    
 userRouter.route('/:id')
-    .get(verifyJWT,getOne)
-    .delete(verifyJWT,remove)
-    .put(verifyJWT,update);
+    .get(getOne)
+    .delete(remove)
+    .put(update);
 
 module.exports = userRouter;
